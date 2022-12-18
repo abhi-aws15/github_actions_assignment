@@ -1,8 +1,9 @@
 name: hello-world
-on: push
- branches:
-   - dev
-   - qa
+on: 
+ push:
+   branches:
+     - dev
+     - qa
 jobs:
   my-job:
     runs-on: ubuntu-latest
