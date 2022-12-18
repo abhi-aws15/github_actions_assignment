@@ -5,6 +5,9 @@ env:
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    env: 
+      user_key: ${{ secrets.user_key }}
     steps:
       - name: my-step
+        if:  env.user_key == 'abcd'
         run: echo "Hello world Today is $DAY_OF_WEEK!"

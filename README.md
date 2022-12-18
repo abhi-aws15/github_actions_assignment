@@ -22,3 +22,13 @@ Added env variable and Using the env inside the run.
 env:
   DAY_OF_WEEK: Monday
 ```
+### 05- Contexts
+----------------
+Creating branch dev
+```git checkout -b dev```
+Similarly with qa branch. 
+Adding the required action for context and push the code to git.
+
+Added matrix.yaml in the workflows
+
+Creating a secret in github repository and using it in the workflow.
