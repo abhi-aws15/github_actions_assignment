@@ -1,10 +1,16 @@
 name: hello-world
-on: push
-env:
-  DAY_OF_WEEK: Monday
+on: 
+  push
+    branches:
+      - dev
+      - qa
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello world Today is $DAY_OF_WEEK!"
+      - name: my-step-1
+        if: endsWith(github.ref, '/dev')
+        run: echo "Hello world it is dev branch!"
+      - name: my-step-2
+        if: endsWith(github.ref, '/qa')
+        run: echo "Hello world it is qa branch!"
